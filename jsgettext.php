@@ -1,7 +1,8 @@
+#!/usr/bin/env php
 <?php
 
-	require_once 'JSParser.php';
-	require_once 'PoeditParser.php';
+	require_once __DIR__.'/JSParser.php';
+	require_once __DIR__.'/PoeditParser.php';
 
 	function buildOptions($args) {
 		$options = array(

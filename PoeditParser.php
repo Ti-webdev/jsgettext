@@ -1,6 +1,6 @@
 <?php
 
-require_once 'PoeditString.php';
+require_once __DIR__.'/PoeditString.php';
 
 /**
  * This class parses a poedit file.
