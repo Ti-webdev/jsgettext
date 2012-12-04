@@ -23,6 +23,13 @@ class PoeditParser {
 
 	public function parse() {
 		$contents = file_get_contents($this->file);
+		if ('' === trim($contents)) {
+			$contents  = 'msgid ""'.PHP_EOL;
+			$contents .= 'msgstr ""'.PHP_EOL;
+			$contents .= '"MIME-Version: 1.0\n"'.PHP_EOL;
+			$contents .= '"Content-Type: text/plain; charset=UTF-8\n"'.PHP_EOL;
+			$contents .= '"Content-Transfer-Encoding: 8bit\n"'.PHP_EOL;
+		}
 
 		$parts = preg_split('#(\r\n|\n){2}#', $contents, -1, PREG_SPLIT_NO_EMPTY);
 
