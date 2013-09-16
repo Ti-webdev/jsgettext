@@ -12,12 +12,12 @@ function buildOptions($args) {
     while ($i < $len) {
         if (preg_match('#^-[a-z]$#i', $args[$i])) {
             $options[$args[$i]] = isset($args[$i+1]) ? trim($args[$i+1]) : true;
-            $i += 2;
-        }
-        else {
-            $options['files'][] = $args[$i];
             $i++;
         }
+        elseif ($args[$i] !== __FILE__) {
+            $options['files'][] = $args[$i];
+        }
+        $i++;
     }
     return $options;
 }
